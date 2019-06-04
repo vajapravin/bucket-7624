@@ -7,6 +7,10 @@ class Matrix
   BAD_CHOICE = 'Bad Choice'
 
   def initialize
+    @arr = []
+  end
+
+  def input
     print "\nPlease give matrix dimension (<width>x<height>):"
     @width, @height = gets.downcase.chomp.split('x').map(&:to_i)
     @count = @height*@width
@@ -14,7 +18,6 @@ class Matrix
     @operator = OPERATORS[gets.upcase.chomp]
     print "\nShould I use (P)rime numbers or (F)ibonacci numbers?"
     @operation = gets.upcase.chomp
-    @arr = []
   end
 
   def process
@@ -28,6 +31,3 @@ class Matrix
     puts BAD_CHOICE
   end
 end
-
-p = Matrix.new
-p.process

@@ -1,7 +1,5 @@
 module Helper
-	attr_accessor :height, :width, :count, :operator, :operation
-
-  private
+	attr_accessor :height, :width, :count, :operator, :operation, :arr
 
   # Generate Prime Number
   def operation_p
@@ -12,6 +10,8 @@ module Helper
   def operation_f
     (1..count).map { |i| @arr << fibonacci(i) }
   end
+  
+  private
 
   def fibonacci(n)
     return  n  if ( 0..1 ).include? n
